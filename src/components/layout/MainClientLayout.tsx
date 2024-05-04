@@ -1,11 +1,10 @@
-import { ReactNode } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
 export default function MainClientLayout({
   children,
 }: {
-  children: ReactNode;
+  children: React.ReactNode;
 }) {
   return (
     <div className="container-doc">

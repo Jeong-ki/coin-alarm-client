@@ -1,7 +1,13 @@
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import { ButtonHTMLAttributes } from "react";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: ReactNode;
+  children: React.ReactNode;
   size?: "large" | "medium" | "small";
-  color?: "primary" | "secondary" | "gray" | "white_line" | "gray_line";
+  color?:
+    | "primary"
+    | "secondary"
+    | "gray"
+    | "black"
+    | "white_line"
+    | "gray_line";
 }

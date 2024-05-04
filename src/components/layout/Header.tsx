@@ -20,6 +20,7 @@ export default function Header() {
     isFocus: isOpenProfile,
     setIsFocus: setIsOpenProfile,
   });
+
   return (
     <header className="doc-header">
       <h1 className="doc-title">
@@ -27,7 +28,12 @@ export default function Header() {
           Poard
         </Link>
       </h1>
-      <div
+
+      <Button type="button" color="black" size="medium">
+        Get Started
+      </Button>
+
+      {/* <div
         ref={profileRef}
         className={cn("info_my", { layer_open: isOpenProfile })}
       >
@@ -75,7 +81,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </header>
   );
 }
