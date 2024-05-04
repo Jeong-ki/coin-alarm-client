@@ -1,17 +1,17 @@
 import { StateCreator, create } from "zustand";
 import { devtools } from "zustand/middleware";
 
-interface IGlobalState {
+interface GlobalState {
   test: string;
   setTest: (state: string) => void;
 }
 
-const store: StateCreator<IGlobalState> = (set, get) => ({
+const store: StateCreator<GlobalState> = (set, get) => ({
   test: "",
   setTest: (state) => set({ test: state }),
 });
 
-const useGlobalState = create<IGlobalState>()(
+const useGlobalState = create<GlobalState>()(
   devtools(store, { enabled: process.env.NODE_ENV === "development" })
 );
 
