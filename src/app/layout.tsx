@@ -3,7 +3,7 @@ import "@/assets/css/style.scss";
 import AppProvider from "@/provider/AppProvider";
 
 export const metadata: Metadata = {
-  title: "P-Board",
+  title: "Poard",
   description: "Project Management Board",
 };
 

@@ -1,4 +1,6 @@
 import { ReactNode } from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default function MainClientLayout({
   children,
@@ -7,7 +9,7 @@ export default function MainClientLayout({
 }) {
   return (
     <div className="container-doc">
-      {/* header */}
+      <Header />
       <main className="doc-main">
         <section className="inner-main">
           {/* gnb */}
@@ -18,6 +20,7 @@ export default function MainClientLayout({
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }
