@@ -16,12 +16,12 @@
   display: inline-block;
   width: 100%;
   padding: 6px 15px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--Gray-10);
   border-radius: 4px;
   font-size: 13px;
   line-height: 20px;
   color: #20262d;
-  background-color: #fff;
+  background-color: var(--White);
   text-align: left;
   vertical-align: top;
   box-sizing: border-box;
@@ -30,70 +30,70 @@
 }
 .tf_comm:hover,
 .tf_comm:focus {
-  border-color: #1a1a1a;
+  border-color: var(--Gray-100);
 }
 .tf_comm:disabled {
-  border-color: #e6e7e8;
-  color: #b5b7b9;
-  background-color: #fafafa;
+  border-color: var(--Gray-10);
+  color: var(--Gray-30);
+  background-color: var(--Gray-2);
   cursor: not-allowed;
 }
 .tf_comm[readonly] {
-  border-color: #e6e7e8;
-  background: #fafafa;
+  border-color: var(--Gray-10);
+  background: var(--Gray-2);
 }
 input.tf_comm[readonly] {
-  background-color: #fafafa;
+  background-color: var(--Gray-2);
 }
 .tf_comm.error {
-  border-color: #ff8080;
+  border-color: var(--Error);
 }
 .tf_comm::-webkit-input-placeholder {
-  color: #6a6e73;
+  color: var(--Gray-60);
   opacity: 1;
 }
 .tf_comm::-moz-placeholder {
-  color: #6a6e73;
+  color: var(--Gray-60);
   opacity: 1;
 }
 .tf_comm:-ms-input-placeholder {
-  color: #6a6e73;
+  color: var(--Gray-60);
   opacity: 1;
 }
 .tf_comm:-moz-placeholder {
-  color: #6a6e73;
+  color: var(--Gray-60);
   opacity: 1;
 }
 .tf_comm::-webkit-input-placeholder[readonly] {
-  color: #6a6e73;
+  color: var(--Gray-60);
   opacity: 1;
 }
 .tf_comm::-moz-placeholder[readonly] {
-  color: #b5b7b9;
+  color: var(--Gray-30);
   opacity: 1;
 }
 .tf_comm:-ms-input-placeholder[readonly] {
-  color: #b5b7b9;
+  color: var(--Gray-30);
   opacity: 1;
 }
 .tf_comm:-moz-placeholder[readonly] {
-  color: #b5b7b9;
+  color: var(--Gray-30);
   opacity: 1;
 }
 .tf_comm:disabled::-webkit-input-placeholder {
-  color: #b5b7b9;
+  color: var(--Gray-30);
   opacity: 1;
 }
 .tf_comm:disabled::-moz-placeholder {
-  color: #b5b7b9;
+  color: var(--Gray-30);
   opacity: 1;
 }
 .tf_comm:disabled:-ms-input-placeholder {
-  color: #b5b7b9;
+  color: var(--Gray-30);
   opacity: 1;
 }
 .tf_comm:disabled:-moz-placeholder {
-  color: #b5b7b9;
+  color: var(--Gray-30);
   opacity: 1;
 }
 
@@ -110,10 +110,31 @@ input.tf_comm[readonly] {
 .txt_error {
   margin-top: 8px;
   font-size: 14px;
-  color: #ec0000;
+  color: var(--Error);
 }
 .txt_success {
   margin-top: 8px;
   font-size: 14px;
-  color: #2c6edb;
+  color: var(--Success-Input);
+}
+
+.box_tf .search_icon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--Gray-60);
+  height: 20px;
+  width: 20px;
+}
+
+.box_tf .del_icon {
+  position: absolute;
+  right: 27px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 5px;
+  color: var(--Gray-60);
+  height: 16px;
+  width: 16px;
 }

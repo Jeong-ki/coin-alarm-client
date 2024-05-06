@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/button";
 import { Input } from "@/components/input";
+import { InputSearch } from "@/components/input/search";
 import validateRules from "@/lib/react-hook-form";
 import { SyntheticEvent, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -13,12 +14,14 @@ interface ExampleFormValue {
 export default function Example() {
   const [text, setText] = useState("");
   const {
+    watch,
+    setValue,
     getValues,
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<ExampleFormValue>({
-    defaultValues: { test: "", testNum: null },
+    defaultValues: { test: "", testNum: null, testSearch: "" },
   });
 
   const handleChange = (value: any) => {
@@ -67,6 +70,14 @@ export default function Example() {
           formSize="large"
           libProps={register("testNum", validateRules.requiredNum)}
           isError={!!errors.testNum?.message}
+        />
+        <InputSearch
+          formSize="large"
+          value={watch("testSearch")}
+          setValue={setValue}
+          libProps={register("testSearch", validateRules.required)}
+          errorMsg={errors.testSearch?.message}
+          isError={!!errors.testSearch?.message}
         />
         <Button type="submit" color="primary" size="medium">
           Test
