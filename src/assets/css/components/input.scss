@@ -1,0 +1,119 @@
+.item_form {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+}
+.inner_tf {
+  position: relative;
+  width: 100%;
+}
+.box_tf {
+  position: relative;
+  display: flex;
+}
+.tf_comm {
+  display: inline-block;
+  width: 100%;
+  padding: 6px 15px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #20262d;
+  background-color: #fff;
+  text-align: left;
+  vertical-align: top;
+  box-sizing: border-box;
+  outline: none;
+  resize: none;
+}
+.tf_comm:hover,
+.tf_comm:focus {
+  border-color: #1a1a1a;
+}
+.tf_comm:disabled {
+  border-color: #e6e7e8;
+  color: #b5b7b9;
+  background-color: #fafafa;
+  cursor: not-allowed;
+}
+.tf_comm[readonly] {
+  border-color: #e6e7e8;
+  background: #fafafa;
+}
+input.tf_comm[readonly] {
+  background-color: #fafafa;
+}
+.tf_comm.error {
+  border-color: #ff8080;
+}
+.tf_comm::-webkit-input-placeholder {
+  color: #6a6e73;
+  opacity: 1;
+}
+.tf_comm::-moz-placeholder {
+  color: #6a6e73;
+  opacity: 1;
+}
+.tf_comm:-ms-input-placeholder {
+  color: #6a6e73;
+  opacity: 1;
+}
+.tf_comm:-moz-placeholder {
+  color: #6a6e73;
+  opacity: 1;
+}
+.tf_comm::-webkit-input-placeholder[readonly] {
+  color: #6a6e73;
+  opacity: 1;
+}
+.tf_comm::-moz-placeholder[readonly] {
+  color: #b5b7b9;
+  opacity: 1;
+}
+.tf_comm:-ms-input-placeholder[readonly] {
+  color: #b5b7b9;
+  opacity: 1;
+}
+.tf_comm:-moz-placeholder[readonly] {
+  color: #b5b7b9;
+  opacity: 1;
+}
+.tf_comm:disabled::-webkit-input-placeholder {
+  color: #b5b7b9;
+  opacity: 1;
+}
+.tf_comm:disabled::-moz-placeholder {
+  color: #b5b7b9;
+  opacity: 1;
+}
+.tf_comm:disabled:-ms-input-placeholder {
+  color: #b5b7b9;
+  opacity: 1;
+}
+.tf_comm:disabled:-moz-placeholder {
+  color: #b5b7b9;
+  opacity: 1;
+}
+
+.form_small {
+  width: 90px;
+}
+.form_medium {
+  width: 150px;
+}
+.form_large {
+  width: 200px;
+}
+
+.txt_error {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #ec0000;
+}
+.txt_success {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #2c6edb;
+}

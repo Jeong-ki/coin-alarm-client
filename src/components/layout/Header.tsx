@@ -1,11 +1,11 @@
 "use client";
 
-import cn from "classnames";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { Button } from "../button";
 import Image from "next/image";
 import useOutsideClick from "@/hooks/useOutsideClick";
+import logo from "@/assets/images/logo.svg";
 
 export default function Header() {
   const profileRef = useRef(null);
@@ -25,6 +25,7 @@ export default function Header() {
     <header className="doc-header">
       <h1 className="doc-title">
         <Link href="/home" className="link_logo">
+          <Image src={logo} alt="Poard Logo" height={25} width={20} />
           Poard
         </Link>
       </h1>
