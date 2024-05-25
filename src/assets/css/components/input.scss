@@ -20,7 +20,7 @@
   border-radius: 4px;
   font-size: 13px;
   line-height: 20px;
-  color: #20262d;
+  color: var(--Gray-90);
   background-color: var(--White);
   text-align: left;
   vertical-align: top;
@@ -108,12 +108,12 @@ input.tf_comm[readonly] {
 }
 
 .txt_error {
-  margin-top: 8px;
+  margin-top: 10px;
   font-size: 14px;
   color: var(--Error);
 }
 .txt_success {
-  margin-top: 8px;
+  margin-top: 10px;
   font-size: 14px;
   color: var(--Success-Input);
 }

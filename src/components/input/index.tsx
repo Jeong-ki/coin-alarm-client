@@ -7,7 +7,7 @@ export const Input = ({
   children,
   formSize,
   errorMsg,
-  isError,
+  // isError,
   successMsg,
   ...otherProps
 }: PropsWithChildren<InputProps>) => {
@@ -15,7 +15,7 @@ export const Input = ({
     <div className={cn("item_form", { [`form_${formSize}`]: formSize })}>
       <div className="box_tf">
         <div className="inner_tf">
-          <InputElem isError={isError} {...otherProps} />
+          <InputElem isError={!!errorMsg} {...otherProps} />
           {children}
         </div>
       </div>

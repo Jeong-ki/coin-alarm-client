@@ -1,4 +1,4 @@
 export const siteConfig = {
-  name: "Poard",
-  description: "Collaborate, manage projects, and reach new productivity peaks",
+  name: "Foard",
+  description: "나만의 가계부를 만들어서 자산을 관리하고 분석해보세요!",
 };

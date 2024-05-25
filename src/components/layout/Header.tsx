@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 import { Button } from "../button";
 import Image from "next/image";
 import useOutsideClick from "@/hooks/useOutsideClick";
-import logo from "@/assets/images/logo.svg";
+import Logo from "@/assets/images/logo.svg";
 
 export default function Header() {
   const profileRef = useRef(null);
@@ -25,13 +25,13 @@ export default function Header() {
     <header className="doc-header">
       <h1 className="doc-title">
         <Link href="/home" className="link_logo">
-          <Image src={logo} alt="Poard Logo" height={25} width={20} />
-          Poard
+          <Image src={Logo} alt="Foard Logo" height={25} width={20} />
+          Foard
         </Link>
       </h1>
 
       <Button type="button" color="black" size="medium">
-        Get Started
+        <Link href="/login">로그인</Link>
       </Button>
 
       {/* <div

@@ -33,12 +33,6 @@ const validateRules = {
       message: "올바른 이메일 형식으로 입력해주세요.",
     },
   },
-  userName: {
-    required: {
-      value: true,
-      message: "유저명을 입력해주세요.",
-    },
-  },
   password: {
     required: {
       value: true,
@@ -46,8 +40,19 @@ const validateRules = {
     },
     pattern: {
       value: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/, // TODO: 정의 필요
-      message: "8~16자의 영문, 숫자, 특수문자만 가능합니다.",
+      message: "8~16자의 영문+숫자+특수문자를 입력해주세요.",
     },
+  },
+  confirmPassword(prevPw: string) {
+    return {
+      required: {
+        value: true,
+        message: "비밀번호 확인을 입력해주세요.",
+      },
+      validate: (confirmPw: string) => {
+        if (prevPw !== confirmPw) return "비밀번호가 일치하지 않습니다.";
+      },
+    };
   },
 };
 
