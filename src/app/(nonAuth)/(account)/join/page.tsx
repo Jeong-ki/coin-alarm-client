@@ -83,7 +83,7 @@ export default function Join() {
               </Button>
             </fieldset>
           </form>
-          <p className="desc_notice_join">
+          <p className="desc_notice_login">
             이미 계정이 있으신가요? <Link href="/login">로그인하기</Link>
           </p>
         </div>

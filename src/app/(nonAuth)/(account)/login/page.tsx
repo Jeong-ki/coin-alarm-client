@@ -54,7 +54,9 @@ export default function Login() {
                 <div className="group_form">
                   <div className="password_label">
                     <label htmlFor="password">비밀번호</label>
-                    <Link href="/find">비밀번호를 잊어버리셨나요?</Link>
+                    <Link href="/reset/request">
+                      비밀번호를 잊어버리셨나요?
+                    </Link>
                   </div>
                   <Input
                     id="password"
@@ -70,7 +72,7 @@ export default function Login() {
               </Button>
             </fieldset>
           </form>
-          <p className="desc_notice_join">
+          <p className="desc_notice_login">
             계정이 없으신가요? <Link href="/join">회원가입하기</Link>
           </p>
         </div>
