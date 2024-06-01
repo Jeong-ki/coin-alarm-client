@@ -12,6 +12,7 @@
     "@tanstack/react-query": "^5.32.1",
     "@tanstack/react-query-devtools": "^5.32.1",
     "classnames": "^2.5.1",
+    "graphql-request": "^7.0.1",
     "lucide-react": "^0.378.0",
     "next": "14.2.3",
     "react": "^18",

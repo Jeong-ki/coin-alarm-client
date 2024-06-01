@@ -7,6 +7,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import Link from "next/link";
 import Image from "next/image";
 import validateRules from "@/lib/react-hook-form";
+import { useRouter } from "next/navigation";
 
 interface ILoginData {
   email: string;
@@ -14,6 +15,7 @@ interface ILoginData {
 }
 
 export default function Login() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -27,6 +29,7 @@ export default function Login() {
 
   const handleLoginSubmit: SubmitHandler<ILoginData> = (data) => {
     console.log(data);
+    router.push("/home");
   };
 
   return (

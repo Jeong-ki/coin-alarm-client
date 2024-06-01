@@ -11,8 +11,8 @@ const store: StateCreator<GlobalState> = (set, get) => ({
   setTest: (state) => set({ test: state }),
 });
 
-const useGlobalState = create<GlobalState>()(
+const useGlobalStore = create<GlobalState>()(
   devtools(store, { enabled: process.env.NODE_ENV === "development" })
 );
 
-export default useGlobalState;
+export default useGlobalStore;

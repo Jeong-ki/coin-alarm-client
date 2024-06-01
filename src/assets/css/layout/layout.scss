@@ -10,12 +10,22 @@ body {
   min-width: 1000px;
   height: 100%;
 
+  &.gnb_open {
+    .main-sub {
+      left: 0;
+    }
+    .main-content,
+    .doc-footer {
+      padding-left: 240px;
+    }
+  }
+
   .doc-main {
     flex: none;
   }
 
   .main-content {
-    padding: 96px 0 64px;
+    padding: 64px 0;
     box-sizing: border-box;
   }
 
