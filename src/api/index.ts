@@ -1,9 +1,10 @@
 import { GraphQLClient } from "graphql-request";
 
-const endpoint = "https://swapi-graphql.netlify.app/.netlify/functions/index";
+const endpoint = process.env.NEXT_PUBLIC_URL || "";
 
 const client = (() => {
-  const token = localStorage?.getItem("token");
+  // const token = localStorage?.getItem("token");
+  const token = false;
 
   return new GraphQLClient(endpoint, {
     headers: {

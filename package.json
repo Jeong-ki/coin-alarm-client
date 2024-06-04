@@ -6,12 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.32.1",
     "@tanstack/react-query-devtools": "^5.32.1",
     "classnames": "^2.5.1",
+    "dotenv": "^16.4.5",
     "graphql-request": "^7.0.1",
     "lucide-react": "^0.378.0",
     "next": "14.2.3",
@@ -21,6 +23,7 @@
     "zustand": "^4.5.2"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
