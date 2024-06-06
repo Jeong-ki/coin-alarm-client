@@ -1,14 +1,15 @@
 import client from "..";
-import { graphql } from "@/gql";
+import { graphql } from "@/lib/gql";
 
-export const queryFindUsers = graphql(`
-  query FindUsers {
-    FindUsers(filter: {}) {
-      userId
-      createdAt
-      isActivated
-    }
-  }
-`);
-
-export const getFindUsers = async () => client.request(queryFindUsers);
+export const getFindUsers = async () =>
+  client.request(
+    graphql(`
+      query FindUsers {
+        FindUsers(filter: {}) {
+          userId
+          createdAt
+          isActivated
+        }
+      }
+    `)
+  );
