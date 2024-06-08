@@ -8,6 +8,8 @@ import Link from "next/link";
 import Image from "next/image";
 import validateRules from "@/lib/react-hook-form";
 import { useRouter } from "next/navigation";
+import { useMutation } from "@tanstack/react-query";
+import { signInUser } from "@/api/auth";
 
 interface ILoginData {
   email: string;
@@ -20,16 +22,32 @@ export default function Login() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<ILoginData>({
     defaultValues: {
       email: "",
       password: "",
     },
   });
 
+  const { mutate: mutateSignIn } = useMutation({
+    mutationFn: signInUser,
+    onSuccess: (res) => {
+      // TODO: 토큰 관리 로직 적용
+      console.log("login success res: ", res);
+      router.push("/home");
+    },
+    onError: (err) => {
+      // TODO: alert 추가
+      // setError("password", {
+      //   type: "fail login",
+      //   message: "이메일 또는 비밀번호를 잘못입력했습니다.",
+      // });
+    },
+  });
+
   const handleLoginSubmit: SubmitHandler<ILoginData> = (data) => {
-    console.log(data);
-    router.push("/home");
+    const { email: userId, password } = data;
+    mutateSignIn({ userId, password });
   };
 
   return (

@@ -8,7 +8,8 @@ import Link from "next/link";
 import Image from "next/image";
 import validateRules from "@/lib/react-hook-form";
 import { useMutation } from "@tanstack/react-query";
-import { mutateSignup } from "@/api/auth";
+import { signUpUser } from "@/api/auth";
+import { useRouter } from "next/navigation";
 
 interface IJoinData {
   email: string;
@@ -18,12 +19,14 @@ interface IJoinData {
 }
 
 export default function Join() {
+  const router = useRouter();
   const {
     watch,
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+    setError,
+  } = useForm<IJoinData>({
     defaultValues: {
       email: "",
       userName: "",
@@ -32,14 +35,28 @@ export default function Join() {
     },
   });
 
-  const { mutate: normalSignup } = useMutation({
-    mutationFn: mutateSignup,
-    onSuccess: (res) => console.log("join success: ", res),
+  const { mutate: mutateSignUp } = useMutation({
+    mutationFn: signUpUser,
+    onSuccess: (res) => {
+      const { result, errorMsg } = res.SignupUser;
+      if (result) {
+        router.push("/login");
+      } else {
+        const isDuplicated = errorMsg === "DUPLICATED_ID";
+        // TODO: alert 추가
+        // isDuplicated && error, focus email
+        isDuplicated &&
+          setError("email", {
+            type: "duplicated",
+            message: "이미 가입되어있는 이메일입니다.",
+          });
+      }
+    },
   });
 
   const handleJoinSubmit: SubmitHandler<IJoinData> = (data) => {
     const { email: userId, password, userName: name } = data;
-    normalSignup({
+    mutateSignUp({
       userId,
       password,
       name,
