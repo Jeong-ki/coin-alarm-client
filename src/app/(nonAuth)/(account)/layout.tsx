@@ -1,8 +1,4 @@
-export default function AccountLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function AccountLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="container-doc type_empty">
       <main className="doc-main cont_login">

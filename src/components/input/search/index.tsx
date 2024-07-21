@@ -1,8 +1,8 @@
-import { FocusEvent, useMemo, useState } from "react";
-import { Input } from "..";
-import { InputSearchProps } from "./types";
-import { InputValue } from "@/@types/element";
-import { Search, X } from "lucide-react";
+import { FocusEvent, useMemo, useState } from 'react';
+import { Input } from '..';
+import { InputSearchProps } from './types';
+import { InputValue } from '@/@types/element';
+import { Search, X } from 'lucide-react';
 
 export const InputSearch = ({
   value,
@@ -37,10 +37,10 @@ export const InputSearch = ({
 
   const handleClickDelBtn = () => {
     if (setValue) {
-      setValue(libProps?.name ?? "", "", { shouldValidate: true });
+      setValue(libProps?.name ?? '', '', { shouldValidate: true });
     }
 
-    onChange?.("");
+    onChange?.('');
   };
 
   return (

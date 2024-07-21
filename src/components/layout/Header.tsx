@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useRef, useState } from "react";
-import { Button } from "../button";
-import Image from "next/image";
-import useOutsideClick from "@/hooks/useOutsideClick";
-import Logo from "@/assets/images/logo.svg";
+import Link from 'next/link';
+import { useRef, useState } from 'react';
+import { Button } from '../button';
+import Image from 'next/image';
+import useOutsideClick from '@/hooks/useOutsideClick';
+import Logo from '@/assets/images/logo.svg';
 
 export default function Header() {
   const profileRef = useRef(null);
   const [isOpenProfile, setIsOpenProfile] = useState<boolean>(false);
 
   const handleOpenProfile = () => {
-    setIsOpenProfile((prev) => !prev);
+    setIsOpenProfile(prev => !prev);
   };
 
   useOutsideClick({
@@ -25,8 +25,8 @@ export default function Header() {
     <header className="doc-header">
       <h1 className="doc-title">
         <Link href="/home" className="link_logo">
-          <Image src={Logo} alt="Foard Logo" height={25} width={20} />
-          Foard
+          <Image src={Logo} alt="코인 알람 로고" height={25} width={20} />
+          Coin Alarm
         </Link>
       </h1>
 

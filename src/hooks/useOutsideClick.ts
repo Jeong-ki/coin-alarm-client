@@ -1,4 +1,4 @@
-import { useEffect, RefObject } from "react";
+import { useEffect, RefObject } from 'react';
 
 interface UseOutsideClickProps {
   ref: RefObject<HTMLElement>;
@@ -6,11 +6,7 @@ interface UseOutsideClickProps {
   setIsFocus: (isFocus: boolean) => void;
 }
 
-const useOutsideClick = ({
-  ref,
-  isFocus,
-  setIsFocus,
-}: UseOutsideClickProps) => {
+const useOutsideClick = ({ ref, isFocus, setIsFocus }: UseOutsideClickProps) => {
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (ref.current && !ref.current.contains(event.target as Node)) {
@@ -19,11 +15,11 @@ const useOutsideClick = ({
     }
 
     if (isFocus) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [ref, isFocus, setIsFocus]);
 };

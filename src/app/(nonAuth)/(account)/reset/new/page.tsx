@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import Logo from "@/assets/images/logo.svg";
-import { Button } from "@/components/button";
-import { Input } from "@/components/input";
-import { SubmitHandler, useForm } from "react-hook-form";
-import Link from "next/link";
-import Image from "next/image";
-import validateRules from "@/lib/react-hook-form";
-import { useState } from "react";
+import Logo from '@/assets/images/logo.svg';
+import { Button } from '@/components/button';
+import { Input } from '@/components/input';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import Link from 'next/link';
+import Image from 'next/image';
+import validateRules from '@/lib/react-hook-form';
+import { useState } from 'react';
 
 interface IRequestData {
   newPassword: string;
@@ -24,12 +24,12 @@ export default function New() {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      newPassword: "",
-      confirmNewPassword: "",
+      newPassword: '',
+      confirmNewPassword: '',
     },
   });
 
-  const handleRequestSubmit: SubmitHandler<IRequestData> = (data) => {
+  const handleRequestSubmit: SubmitHandler<IRequestData> = data => {
     console.log(data);
     setIsComplete(true);
   };
@@ -37,7 +37,7 @@ export default function New() {
   return (
     <div className="wrap_login">
       <div className="tit_login">
-        <Image src={Logo} alt="Foard Logo" height={120} width={120} />
+        <Image src={Logo} alt="코인 알람 로고" height={120} width={120} />
         <h1>새 비밀번호 설정</h1>
       </div>
       <div className="wrap_login_form">
@@ -54,7 +54,7 @@ export default function New() {
                       id="password"
                       type="password"
                       placeholder=""
-                      libProps={register("newPassword", validateRules.password)}
+                      libProps={register('newPassword', validateRules.password)}
                       errorMsg={errors.newPassword?.message}
                     />
                   </div>
@@ -65,8 +65,8 @@ export default function New() {
                       type="password"
                       placeholder=""
                       libProps={register(
-                        "confirmNewPassword",
-                        validateRules.confirmPassword(watch("newPassword"))
+                        'confirmNewPassword',
+                        validateRules.confirmPassword(watch('newPassword'))
                       )}
                       errorMsg={errors.confirmNewPassword?.message}
                     />
@@ -78,9 +78,7 @@ export default function New() {
               </fieldset>
             </form>
           ) : (
-            <div className="box_complete">
-              새 비밀번호 설정이 완료되었습니다.
-            </div>
+            <div className="box_complete">새 비밀번호 설정이 완료되었습니다.</div>
           )}
           <p className="desc_notice_login">
             <Link href="/login">로그인하기</Link>

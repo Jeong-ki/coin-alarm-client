@@ -1,5 +1,5 @@
-import { StateCreator, create } from "zustand";
-import { devtools } from "zustand/middleware";
+import { StateCreator, create } from 'zustand';
+import { devtools } from 'zustand/middleware';
 
 interface GlobalState {
   test: string;
@@ -7,12 +7,12 @@ interface GlobalState {
 }
 
 const store: StateCreator<GlobalState> = (set, get) => ({
-  test: "",
-  setTest: (state) => set({ test: state }),
+  test: '',
+  setTest: state => set({ test: state }),
 });
 
 const useGlobalStore = create<GlobalState>()(
-  devtools(store, { enabled: process.env.NODE_ENV === "development" })
+  devtools(store, { enabled: process.env.NODE_ENV === 'development' })
 );
 
 export default useGlobalStore;

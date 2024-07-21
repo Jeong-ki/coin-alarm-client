@@ -1,7 +1,7 @@
-import cn from "classnames";
-import { InputElem } from "./elem";
-import { PropsWithChildren } from "react";
-import { InputProps } from "./types";
+import cn from 'classnames';
+import { InputElem } from './elem';
+import { PropsWithChildren } from 'react';
+import { InputProps } from './types';
 
 export const Input = ({
   children,
@@ -12,7 +12,7 @@ export const Input = ({
   ...otherProps
 }: PropsWithChildren<InputProps>) => {
   return (
-    <div className={cn("item_form", { [`form_${formSize}`]: formSize })}>
+    <div className={cn('item_form', { [`form_${formSize}`]: formSize })}>
       <div className="box_tf">
         <div className="inner_tf">
           <InputElem isError={!!errorMsg} {...otherProps} />

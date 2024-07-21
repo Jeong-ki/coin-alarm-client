@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import Logo from "@/assets/images/logo.svg";
-import { Button } from "@/components/button";
-import { Input } from "@/components/input";
-import { SubmitHandler, useForm } from "react-hook-form";
-import Link from "next/link";
-import Image from "next/image";
-import validateRules from "@/lib/react-hook-form";
-import { useState } from "react";
+import Logo from '@/assets/images/logo.svg';
+import { Button } from '@/components/button';
+import { Input } from '@/components/input';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import Link from 'next/link';
+import Image from 'next/image';
+import validateRules from '@/lib/react-hook-form';
+import { useState } from 'react';
 
 interface IRequestData {
   email: string;
@@ -21,11 +21,11 @@ export default function Request() {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      email: "",
+      email: '',
     },
   });
 
-  const handleRequestSubmit: SubmitHandler<IRequestData> = (data) => {
+  const handleRequestSubmit: SubmitHandler<IRequestData> = data => {
     console.log(data);
     setIsRequest(true);
   };
@@ -33,7 +33,7 @@ export default function Request() {
   return (
     <div className="wrap_login">
       <div className="tit_login">
-        <Image src={Logo} alt="Foard Logo" height={120} width={120} />
+        <Image src={Logo} alt="코인 알람 로고" height={120} width={120} />
         <h1>비밀번호 초기화</h1>
       </div>
       <div className="wrap_login_form">
@@ -49,7 +49,7 @@ export default function Request() {
                     <Input
                       id="email"
                       placeholder=""
-                      libProps={register("email", validateRules.email)}
+                      libProps={register('email', validateRules.email)}
                       errorMsg={errors.email?.message}
                     />
                   </div>
@@ -61,8 +61,7 @@ export default function Request() {
             </form>
           ) : (
             <div className="box_complete">
-              비밀번호 초기화 요청이 완료되었습니다. <br /> 이메일을
-              확인해주세요.
+              비밀번호 초기화 요청이 완료되었습니다. <br /> 이메일을 확인해주세요.
             </div>
           )}
           <p className="desc_notice_login">

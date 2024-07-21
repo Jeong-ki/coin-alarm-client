@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
-import "@/assets/css/style.scss";
-import AppProvider from "@/provider/AppProvider";
-import { siteConfig } from "@/config/site";
+import type { Metadata } from 'next';
+import '@/assets/css/style.scss';
+import AppProvider from '@/provider/AppProvider';
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
   title: {
@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   icons: [
     {
-      url: "/logo.svg",
-      href: "/logo.svg",
+      url: '/logo.svg',
+      href: '/logo.svg',
     },
   ],
 };

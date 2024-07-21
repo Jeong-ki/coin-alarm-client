@@ -1,15 +1,14 @@
-"use client";
+'use client';
 
-import Logo from "@/assets/images/logo.svg";
-import { Button } from "@/components/button";
-import { Input } from "@/components/input";
-import { SubmitHandler, useForm } from "react-hook-form";
-import Link from "next/link";
-import Image from "next/image";
-import validateRules from "@/lib/react-hook-form";
-import { useMutation } from "@tanstack/react-query";
-import { signUpUser } from "@/api/auth";
-import { useRouter } from "next/navigation";
+import Logo from '@/assets/images/logo.svg';
+import { Button } from '@/components/button';
+import { Input } from '@/components/input';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import Link from 'next/link';
+import Image from 'next/image';
+import validateRules from '@/lib/react-hook-form';
+import { useMutation } from '@tanstack/react-query';
+import { useRouter } from 'next/navigation';
 
 interface IJoinData {
   email: string;
@@ -28,45 +27,41 @@ export default function Join() {
     setError,
   } = useForm<IJoinData>({
     defaultValues: {
-      email: "",
-      userName: "",
-      password: "",
-      confirmPassword: "",
+      email: '',
+      userName: '',
+      password: '',
+      confirmPassword: '',
     },
   });
 
-  const { mutate: mutateSignUp } = useMutation({
-    mutationFn: signUpUser,
-    onSuccess: (res) => {
-      const { result, errorMsg } = res.SignupUser;
-      if (result) {
-        router.push("/login");
-      } else {
-        const isDuplicated = errorMsg === "DUPLICATED_ID";
-        // TODO: alert 추가
-        // isDuplicated && error, focus email
-        isDuplicated &&
-          setError("email", {
-            type: "duplicated",
-            message: "이미 가입되어있는 이메일입니다.",
-          });
-      }
-    },
-  });
+  // const { mutate: mutateSignUp } = useMutation({
+  //   mutationFn: signUpUser,
+  //   onSuccess: (res) => {
+  //     const { result, errorMsg } = res.SignupUser;
+  //     if (result) {
+  //       router.push("/login");
+  //     } else {
+  //       const isDuplicated = errorMsg === "DUPLICATED_ID";
+  //       // TODO: alert 추가
+  //       // isDuplicated && error, focus email
+  //       isDuplicated &&
+  //         setError("email", {
+  //           type: "duplicated",
+  //           message: "이미 가입되어있는 이메일입니다.",
+  //         });
+  //     }
+  //   },
+  // });
 
-  const handleJoinSubmit: SubmitHandler<IJoinData> = (data) => {
+  const handleJoinSubmit: SubmitHandler<IJoinData> = data => {
     const { email: userId, password, userName: name } = data;
-    mutateSignUp({
-      userId,
-      password,
-      name,
-    });
+    console.log(data);
   };
 
   return (
     <div className="wrap_login">
       <div className="tit_login">
-        <Image src={Logo} alt="Foard Logo" height={120} width={120} />
+        <Image src={Logo} alt="코인 알람 로고" height={120} width={120} />
         <h1>회원가입</h1>
       </div>
       <div className="wrap_login_form">
@@ -81,7 +76,7 @@ export default function Join() {
                   <Input
                     id="email"
                     placeholder=""
-                    libProps={register("email", validateRules.email)}
+                    libProps={register('email', validateRules.email)}
                     errorMsg={errors.email?.message}
                   />
                 </div>
@@ -90,7 +85,7 @@ export default function Join() {
                   <Input
                     id="userName"
                     placeholder=""
-                    libProps={register("userName", validateRules.required)}
+                    libProps={register('userName', validateRules.required)}
                     errorMsg={errors.userName?.message}
                   />
                 </div>
@@ -100,7 +95,7 @@ export default function Join() {
                     id="password"
                     type="password"
                     placeholder=""
-                    libProps={register("password", validateRules.password)}
+                    libProps={register('password', validateRules.password)}
                     errorMsg={errors.password?.message}
                   />
                 </div>
@@ -111,8 +106,8 @@ export default function Join() {
                     type="password"
                     placeholder=""
                     libProps={register(
-                      "confirmPassword",
-                      validateRules.confirmPassword(watch("password"))
+                      'confirmPassword',
+                      validateRules.confirmPassword(watch('password'))
                     )}
                     errorMsg={errors.confirmPassword?.message}
                   />

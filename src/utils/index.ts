@@ -1,2 +1,1 @@
-export const getCleanedNum = (value: number | string) =>
-  `${value}`.replace(/\D/g, "");
+export const getCleanedNum = (value: number | string) => `${value}`.replace(/\D/g, '');

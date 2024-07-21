@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { ChangeEvent, FocusEvent } from "react";
-import { InputElemProps } from "./types";
-import cn from "classnames";
+import { ChangeEvent, FocusEvent } from 'react';
+import { InputElemProps } from './types';
+import cn from 'classnames';
 
 export const InputElem = ({
   isError,
-  autoComplete = "off",
+  autoComplete = 'off',
   onBlur = () => {},
   onChange = () => {},
   libProps = {},
@@ -33,7 +33,7 @@ export const InputElem = ({
 
   return (
     <input
-      className={cn("tf_comm", {
+      className={cn('tf_comm', {
         error: isError,
       })}
       placeholder="입력해 주세요."
